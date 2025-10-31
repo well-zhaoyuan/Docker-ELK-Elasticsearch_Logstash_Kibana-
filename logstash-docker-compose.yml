@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.5
+    container_name: logstash
+    ports:
+      - 5033:5033
+    volumes:
+      - /mnt/d/ContainersCFG/ELKConfig/logstash/config:/usr/share/logstash/config
+      - /mnt/d/ContainersCFG/ELKConfig/logstash/pipeline:/usr/share/logstash/pipeline
+    networks:
+      - custom_net
+networks:
+  custom_net:
+    name: custom_net
+    external: true

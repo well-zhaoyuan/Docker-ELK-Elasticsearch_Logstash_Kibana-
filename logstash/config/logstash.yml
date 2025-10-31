@@ -1,0 +1,11 @@
+http.host: "0.0.0.0"  
+xpack.monitoring.elasticsearch.hosts: ["http://elasticsearch:19200"]  # 指向 Elasticsearch 服务地址
+xpack.monitoring.elasticsearch.username: "elastic"
+xpack.monitoring.elasticsearch.password: "N6731nAhb3waz3J1VXCJ"
+config.reload.automatic: true  # 启用配置热更新  
+xpack.management.enabled: false  # 关闭 X-Pack 管理  
+queue.type: persisted          # 启用持久化队列（默认队列类型为 memory）‌
+path.data: /usr/share/logstash/data  # 持久化数据存储根目录（包含队列、插件数据等
+path.queue: /usr/share/logstash/data/queue  # 持久化队列存储路径（需确保目录可写）
+path.logs: /usr/share/logstash/logs # 指定日志存储根路径（支持绝对路径）
+queue.max_bytes: 1024mb       # 队列最大容量（超出后触发背压机制）

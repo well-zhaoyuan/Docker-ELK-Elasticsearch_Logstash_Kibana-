@@ -1,0 +1,15 @@
+# /usr/share/logstash/config/jvm.options
+
+# JVM 堆内存设置（根据服务器内存调整）
+-Xms2g
+-Xmx2g
+
+# GC 配置（推荐 G1 垃圾回收器）
+-XX:+UseG1GC
+-XX:MaxGCPauseMillis=200
+
+# 其他优化参数
+-Djava.awt.headless=true
+-Dfile.encoding=UTF-8
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=/var/log/logstash/heapdump.hprof

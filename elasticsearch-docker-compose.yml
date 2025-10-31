@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.5
+    container_name: elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - discovery.type=single-node
+    ports:
+      - 19200:19200
+      - 19300:19300
+    volumes:
+      - /mnt/d/ContainersCFG/ELKConfig/elasticsearch/data:/usr/share/elasticsearch/data
+      - /mnt/d/ContainersCFG/ELKConfig/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - /mnt/d/ContainersCFG/ELKConfig/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      - custom_net
+networks:
+  custom_net:
+    name: custom_net
+    external: true

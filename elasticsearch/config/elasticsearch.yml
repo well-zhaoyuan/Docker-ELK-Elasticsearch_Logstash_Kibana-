@@ -1,0 +1,16 @@
+cluster.name: "docker-es"
+network.host: 0.0.0.0
+http.port: 19200 # 修改 HTTP 端口
+transport.port: 19300 # 修改 Transport 端口
+
+# 单节点模式
+discovery.type: single-node
+
+# 开启安全认证
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: false
+
+# 跨域配置（可选）
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-headers: "X-Requested-With,Content-Type,Authorization"

@@ -1,0 +1,7 @@
+server.host: "0.0.0.0"           # 允许外部访问‌
+server.port: 5601                # 默认端口，按需调整 
+elasticsearch.hosts: ["http://elasticsearch:19200"]  # 关联 Elasticsearch 容器名‌
+elasticsearch.username: elastic # es的账号
+elasticsearch.password: N6731nAhb3waz3J1VXCJ #es的密码
+elasticsearch.requestTimeout: 3000 # 定义与 Elasticsearch 通信的超时时间‌,默认值：30000（30 秒）
+i18n.locale: "zh-CN"              # 可选，设置中文界面
